@@ -8,11 +8,11 @@ Allow user input to compare the transition/change (if any) in congressional voti
 
 ##   Technical Summary
 
-Django – framework – front end
-Python - programming
-SQL – managing DB’s/reporting
-Map Plotting (i.e. Matplotlib. etc.)-state of KY map and overlays of districts(?)
-Bootstrap- front end
+* Django – framework – front end
+* Python - programming
+* SQL – managing DB’s/reporting
+* Map Plotting (i.e. Matplotlib. etc.)-state of KY map and overlays of  districts(?)
+* Bootstrap- front end
 
 
 ##   Features
