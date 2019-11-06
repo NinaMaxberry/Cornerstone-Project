@@ -81,6 +81,13 @@ Allow user input to compare the transition/change (if any) in congressional voti
     3.	Resources – provide links (new page)
     4.	++Provide user comments area (blog-like)
         a.	If added will need input area for user to register and enter comment
+    
+    ## Milestones
+    # Week of Nov 4th - Create framework (Django)
+    # Week of Nov 11th - Grab/Create DB
+    # Week of Nov 18th - Transfer/Store
+    # Week of Nov 25th - View/Query
+    # Week of Dec 2nd - Test
 
 
 
