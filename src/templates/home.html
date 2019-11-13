@@ -1,2 +1,33 @@
-<h1>Hello World</h1>
-<p>This is a template</p>
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<p>Current congressional senators and representatives (names, image and district)</p>
+
+<h1>What voting district do you live in?</h1>
+<p>Let's find out!</p>
+
+<p>
+{{ my_text }}, {{ my_congTable }}
+</p>
+
+<ul>
+    <li>District</li>
+    <li>Name</li>
+    <li>Term Year</li>
+</ul>
+
+<ul>
+{% for my_zip in my_zipList %}
+    <li>{{ forloop.counter }} - {{ my_zip }}</li>
+
+{% endfor %}
+</ul>
+
+{% endblock content %}
+
+
+
+

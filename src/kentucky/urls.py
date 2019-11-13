@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from page.views import homepage_view, constanttext_view
+from page.views import homepage_view, landing_view
 
 urlpatterns = [
-    path('', homepage_view, name='home'),
+    path('home/', homepage_view),
     path('admin/', admin.site.urls),
-    path('constanttext', constanttext_view),
+    path('landing/', landing_view),
     
 
 ]
