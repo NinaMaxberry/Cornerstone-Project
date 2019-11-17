@@ -1,7 +1,7 @@
-from django.http import HttpResponse # must add to integrate django
 from django.shortcuts import render
+from .models import Zip
 
 # Create your views here.
-def zip_info_view(request):
+def zip_code_view(request):
 
-    return render(request, "")
+    return render(request, "zip_code/detail.html", {})
