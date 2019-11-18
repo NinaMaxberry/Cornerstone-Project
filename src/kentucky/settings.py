@@ -25,7 +25,7 @@ SECRET_KEY = 's&!j+=vi9^anytier-@x)u3*sc(&m8!v$m14@o%5)+!@pue5%v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # my apps
     'zip',
     'page',
+    'csvimport',
 
 ]
 

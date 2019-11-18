@@ -4,12 +4,14 @@
 
 {% block content %}
 
-<p>Placeholder/table for current congressional senators and representatives (names, image and district)</p>
+{{my_text}}, {{my_congTable}}
 
-<h1>What voting district do you live in?</h1>
+
+
+<h1>What Congressional Voting District do you live in?</h1>
 <p>Let's find out!</p>
 
-<p>
+<!---<p>
 {{ my_text }}, {{ my_congTable }}
 </p>
 
@@ -24,7 +26,7 @@
     <li>{{ forloop.counter }} - {{ my_zip }}</li>
 
 {% endfor %}
-</ul>
+</ul>--->
 
 {% endblock content %}
 

@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from page.views import homepage_view, results_view
+from page.views import homepage_view, results_view, csv_zip_view
 
 urlpatterns = [
     path('index/', homepage_view),
     path('home/', homepage_view),
     path('admin/', admin.site.urls),
     path('results/', results_view),
+    path('csv_upload/', csv_zip_view), 
     
 
 ]
