@@ -1,9 +1,12 @@
 import csv
 
+from django.urls import path
 from django.http import HttpResponse # must add to integrate django
 from django.shortcuts import render
 
 # Create your views here.
+
+
 def homepage_view(request, *args, **kwargs):
     my_description = {
         "my_text" : "Description - This site will allow you to see the changes in blah blah blah",
@@ -20,15 +23,8 @@ def results_view(request, *args, **kwargs):
     }
     return render(request, 'results.html', my_findings)
 
-def csv_zip_view(request):
 
-    with open(r'zip_code_query.csv') as f:
-        reader = csv.reader(f, delimiter=' ', quotechar= '|')
-        for column in reader:
-            _, created = zip.objects.get_or_create(
-                zip=column[0],
-                county=column[3]
-            )
+
     #template = "upload_zip.html"
 
     #prompt = {
