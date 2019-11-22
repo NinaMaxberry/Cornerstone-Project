@@ -83,8 +83,10 @@ WSGI_APPLICATION = 'kentucky.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': C:Dev/gerry/src/zip/data(2).db,  
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite'),
+        'NAME': 'C:\Dev\data files\districts.db',
+        'NAME': 'C:\Dev\data files\rep.db',
+        'NAME': 'C:\Dev\data files\zipcodes.db',
 
     }
 
