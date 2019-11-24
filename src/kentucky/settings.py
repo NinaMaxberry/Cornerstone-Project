@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'page.apps.PageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
 
     # my apps
     'zip',
-    'page',
     'csvimport',
 
 ]

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class PagesConfig(AppConfig):
+class PageConfig(AppConfig):
     name = 'page'
