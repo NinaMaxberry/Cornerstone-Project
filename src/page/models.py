@@ -22,9 +22,7 @@ class district(models.Model):
     congressional_district = models.IntegerField(default=0)
     zcta = models.IntegerField(default = 0, primary_key=True) #can integers be limited like Charfields?
 
-    congressional_district = models.Manager()
-    zcta = models.Manager()
-
+    
     def __str__(self):
         return f'{self.congressional_district} {self.zcta}'
 
