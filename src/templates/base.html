@@ -1,19 +1,31 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ky Gerrymandering</title>
+    <title>{% block title %}Ky Gerrymandering{% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'page/style.css' %}">
 </head>
 <body>
-   {% include 'navbar.html' %} 
+   
+    <div class="navbar">
+        {% block navbar %}
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/results">Results</a></li>
+        </ul>
+        {% endblock %}
+    </div>
 
+    
+    
 
-   {% block content %}
-   <p>Current congressional senators and representatives</p><!---same content on each html page-->
-   {% endblock content %}
-
+    {% block content %}
+    {% endblock %}
    
 
    

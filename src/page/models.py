@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class zip(models.Model): #columns in file
+class zip(models.Model):
     zip = models.IntegerField(default = 0, primary_key=True)
     county = models.TextField(default = "")
 
