@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Your district is listed below</h1>
+    {{block.super }}
+        {{my_vision}}
+    {{block.super }}
+        {{my_return}}
+    
+        
 
-<p>
-{{ my_vision }}, <br> {{ my_table }}
-</p>
-
-{% endblock content %} 
+{% endblock content %}
 

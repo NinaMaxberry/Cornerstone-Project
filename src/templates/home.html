@@ -1,44 +1,30 @@
 {% extends "base.html" %}
 
-{% block }
-<div class="current">
-    {% block current %}
-<p>The current congressional district representatives are:</p><!---same content on each html page-->
-    {% endblock %}
-</div>
-
 
 {% block content %}
     {{block.super }}
         {{my_text}}
 {% endblock content %}
 
-{$ block congTable %}
-<h1>{{my_congTable}}</h1>
-<ul>
-{% for zip in rep.all %}
-    <li>{{ my_congTable }}</li>
-{% endfor %}
-</ul>
 
-
-<!-- <div class=congTable>
-        {% block table %}
-         {{block.super }}
-        
-    {% endblock  %}
-
-</div>     -->
-    
-
-
-
-<div class="what">
-    {% block what %}
-<h1>What Congressional Voting District do you live in?</h1>
-<p>Let's find out!</p>
-{% endblock %}
+<div class="current">
+{% block current %}
+    {{block.super }}
+        {{currentReps}}
+{% endblock%}
 </div>
+
+{% block table %}
+<table class="curTable">
+    <tr>
+        <th>district</th>
+        <th>f_name</th>
+        <th>l_name</th>
+    </tr>
+            
+</table>
+
+{% endblock %}
 
 
 

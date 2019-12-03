@@ -1,0 +1,11 @@
+
+
+{% if userInput %}
+    <ul>
+    {% for zip in userInput %}
+        <li> <a href = "{{% url 'userInput' zip.id %}}/">{{district.zip }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>That zipcode is invalid.</p>
+    {% endif %}
