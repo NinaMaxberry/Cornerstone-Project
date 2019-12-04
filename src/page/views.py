@@ -6,14 +6,14 @@ from django.shortcuts import render
 from django.template import loader
 
 
-from .models import rep, district, zipcodes
+from .models import Rep, District, Zipcodes
 
 # Create your views here.
 
 
 def homepage_view(request, *args, **kwargs):
     my_description = {
-        "my_text" : "Thanks for your interest in discovering your past and present local congressional district information.  Did you know that your district is determined by your residence zip code?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress with your zip code and compare them with your present representatives.",
+        "my_text" : "Thanks for your interest in discovering your past and present local congressional district information.  Did you know that your district is determined by your residence zip code?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress).",
         "currentReps" : "The current representatives for all districts in Kentucky are:",
         #"userZip" : "Please enter your zip code.",
     }
