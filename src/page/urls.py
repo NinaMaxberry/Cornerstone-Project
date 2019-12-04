@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.homepage_view, name='homepage_view'),
     path('results/', views.results_view, name='results_view'),
     path('userInput/', views.userInput, name ='User Input'),
+    path('rep/', views.repList, name='rep_list'),
     #path('csv_upload/', include('page.urls')), 
     
 ]

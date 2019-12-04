@@ -10,6 +10,17 @@ from .models import Rep, District, Zipcodes
 
 # Create your views here.
 
+def repList(request):
+    # Rep = Rep.objects.all()
+    # fname=Rep.objects.all('f_name')
+    # lname=Rep.objects.all('l_name')
+    # full_Name = [[n, x] for n in fname for x in lname]
+    # output = ', '(full_Name)
+    name = ['f_name' ' ' + ' ' 'l_name']
+    names = Rep.objects.all()
+    # output = ', '.[name]
+    return HttpResponse(names)
+
 
 def homepage_view(request, *args, **kwargs):
     my_description = {
