@@ -11,32 +11,21 @@ from .models import Rep, District, Zipcodes
 # Create your views here.
 
 def repList(request):
-    # Rep = Rep.objects.all()
-    # fname=Rep.objects.all('f_name')
-    # lname=Rep.objects.all('l_name')
-    # full_Name = [[n, x] for n in fname for x in lname]
-    # output = ', '(full_Name)
-    name = ['f_name' ' ' + ' ' 'l_name']
-    names = Rep.objects.all()
-    # output = ', '.[name]
-    return render (request, 'page/results.html', {'names': names}),
+    all_objects_Rep=Rep.objects.all()
+    context={'all_objects_Rep': all_objects}
+    return render (request, 'page/base.html', context)
 
 
 def homepage_view(request):
     my_description = {
         "my_text" : "Thanks for your interest in discovering your past and present local congressional district information.  Did you know that your district is determined by your residence zip code?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress).",
-        #"home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
+        "home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
         #"currentReps" : "The current representatives for all districts in Kentucky are:",
         #"userZip" : "Please enter your zip code.",
     }
     return render(request, 'home.html', my_description)
 
-    def current_reps(request):
-        {Reps.objects.all()
-    }
-
-    return render(request, 'home.html', current_reps)
-
+    
 def results_view(request):
     my_findings = {
         "my_vision" : "During the 110th Congress, the following were the congressional representatives for Kenutcky.",

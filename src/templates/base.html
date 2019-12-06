@@ -9,6 +9,8 @@
     <title>{% block title %}Ky Gerrymandering{% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'page/css/style.css' %}">
+    <link rel = "stylesheet" href="{% static 'page/images' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <header>
@@ -22,22 +24,42 @@
 
 <body>
 
-<div class="site-container">
-
-   
 {% block content %}
-   
-{% block current_reps %}
-    <div class="current">
-        <ol>
-           <li><a href=rep.objects.all></a></li>
 
-    {% endblock %}
+<!-- <div class="site-container">
+    <div class="row justify-content-center panel">
+        <div class = "col-md-5">
+            <div class = "image">
+                <img src="images\Kentucky.jpg" alt="outline of kentucky"></img> 
+            </div>
+        </div>
     </div>
-    
+</div> -->
+
+
+<div class ="RepList">
+    {% block repList %}
+<table>
+    <tr>
+        <th>Congressional_District</th>
+        <th>f_name</th>
+        <th>l_name</th>
+    </tr>
+
+    {% for x in all_objects_Rep %}
+    <tr>
+        <td>{{ x.Congressional_District }}</td>
+        <td>{{ x.f_name }}</td>
+        <td>{{ x.l_name }}</td>
+    </tr>
+    {% endfor %}
+    {% endblock %}
+</table>
+</div>
+
+
 {% endblock %} 
-   
-</div>  
+
 
    
 

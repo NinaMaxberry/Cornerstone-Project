@@ -2,14 +2,14 @@
 
 {% block content %}
 
+<div class='lanaguage'>
 {% block language %}
-    {{block.super }}
-        {{my_vision}}
-        <br>
-    {{block.super }}
+    <!-- {{block.super }} -->
+        {{my_vision|linebreaks }}
+    <!-- {{block.super }} -->
         {{my_return}}
 {% endblock %}            
-
+</div>
 
 
 <table class=repNames>

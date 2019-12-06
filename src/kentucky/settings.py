@@ -84,9 +84,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite'),
-        'NAME': 'C:\Dev\data files\district.db',
-        'NAME': 'C:\Dev\data files\rep.db',
-        'NAME': 'C:\Dev\data files\zipcodes.db',
+        'NAME': 'C:\Dev\data files\District.db',
+        'NAME': 'C:\Dev\data files\Rep.db',
+        'NAME': 'C:\Dev\data files\Zipcodes.db',
 
     }
 
@@ -142,4 +142,4 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, '/static/'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/page')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/page'),

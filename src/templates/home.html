@@ -5,28 +5,29 @@
 
 
 <div class = "hometitle">
-    <h1> How The Congressional Districts In KY Have Changed Through The Census</h1>
     {% block hometitle %}
         {{ block.super }}
-        {{ my_hometitle }}
+        {{ home_title|linebreaks }}
     {% endblock %}
 </div>
 
 <div class="intro">
     {% block intro %}
         {{block.super }}
-        <br>
         {{my_text}}
     {% endblock %}
 
 </div>
 
-<div class="current">
-{% block current_reps %}
-
+<div class='replist'>
+    {% block rlist %}
+        {{ block.super }}
+        {{ repList }}
+    {% endblock %}
 </div>
 
-{% endblock %}
+
+
 
 {% endblock %}
 

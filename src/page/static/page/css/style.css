@@ -1,10 +1,39 @@
-.navbar {
-   list-style-type: none; 
-   margin: 0;
-   padding: 0;
+* {
+   box-sizing: border-box;
 }
 
-h1 {
+body, home.html {
+   margin: auto;
+   height: 50%;
+}
+
+.image {
+   background-image: url("kentucky.jpg");
+   height: 50%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.site-container {
+   height: auto;
+}
+
+.navbar ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   color: black;
+}
+
+.hometitle {
    color: blue;
    text-align: center;
+   font-size: 24px;
+   padding: 25px 0 15px 0;
+}
+
+.intro {
+   display: block;
+   padding: 15px 35px;
 }
