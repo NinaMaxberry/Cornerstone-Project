@@ -1,31 +1,38 @@
 {% extends "base.html" %}
-{% load static %}
-
+{% load static from staticfiles %}
 
 {% block content %}
-    {{block.super }}
-        {{my_text}}
-{% endblock content %}
 
 
-<div class="current">
-{% block current %}
-    {{block.super }}
-        {{currentReps}}
-{% endblock%}
+<div class = "hometitle">
+    <h1> How The Congressional Districts In KY Have Changed Through The Census</h1>
+    {% block hometitle %}
+        {{ block.super }}
+        {{ my_hometitle }}
+    {% endblock %}
 </div>
 
-{% block table %}
-<table class="curTable">
-    <tr>
-        <th>district</th>
-        <th>f_name</th>
-        <th>l_name</th>
-    </tr>
-            
-</table>
+<div class="intro">
+    {% block intro %}
+        {{block.super }}
+        <br>
+        {{my_text}}
+    {% endblock %}
+
+</div>
+
+<div class="current">
+{% block current_reps %}
+
+</div>
 
 {% endblock %}
+
+{% endblock %}
+
+
+
+
 
 
 

@@ -20,6 +20,9 @@ class District(models.Model):
     congressional_district = models.IntegerField(default=0)
     zip = models.IntegerField(default = 0, primary_key=True) #can integers be limited like Charfields?
 
+# class Meta:
+#     zip = ['zip'] how to raise an error or 404
+
     def __str__(self):
         return f'{self.congressional_district} {self.zip}'
 

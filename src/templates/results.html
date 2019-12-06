@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% block language %}
     {{block.super }}
         {{my_vision}}
+        <br>
     {{block.super }}
         {{my_return}}
-    
-        
+{% endblock %}            
 
-{% endblock content %}
 
+
+<table class=repNames>
+    <th></th>
+</table>
+
+
+
+
+
+{% endblock %}

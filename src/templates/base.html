@@ -1,4 +1,4 @@
-{% load static %}
+{% load static from staticfiles %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,26 +8,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Ky Gerrymandering{% endblock %}
     </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'page/style.css' %}">
+    <link rel="stylesheet" href="{% static 'page/css/style.css' %}">
 </head>
-<body>
-   
+
+<header>
     <div class="navbar">
-        {% block navbar %}
         <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/results">Results</a></li>
         </ul>
-        {% endblock %}
     </div>
+</header>
 
-    
-    {% block content %}
-    {% endblock %}
+<body>
 
-    {% block current %}
-    {% endblock %}
+<div class="site-container">
+
    
+{% block content %}
+   
+{% block current_reps %}
+    <div class="current">
+        <ol>
+           <li><a href=rep.objects.all></a></li>
+
+    {% endblock %}
+    </div>
+    
+{% endblock %} 
+   
+</div>  
 
    
 
