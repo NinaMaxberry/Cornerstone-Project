@@ -9,7 +9,7 @@ class Zipcodes(models.Model):
         return f'{self.zip} {self.county}'
 
 class Rep(models.Model):
-    zip = models.IntegerField(default = 0, primary_key=True  )
+    district = models.IntegerField(default = 0, primary_key=True  )
     f_name = models.TextField()
     l_name = models.TextField()
 
@@ -27,7 +27,21 @@ class District(models.Model):
         return f'{self.congressional_district} {self.zip}'
 
 
+class Reps2000(models.Model):
+    district = models.IntegerField()
+    F_Name = models.TextField()
+    L_Name = models.TextField()
 
+    def __str__(self):
+        return f'{self.F_Name} {self.L_Name}'
+
+class Reps2010(models.Model):
+    district = models.IntegerField()
+    F_Name = models.TextField()
+    L_Name = models.TextField()
+
+    def __str__(self):
+        return f'{self.F_Name} {self.L_Name}'
     
     
 

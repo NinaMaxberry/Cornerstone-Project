@@ -1,19 +1,33 @@
-import csv
-
 from django.urls import path
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
 
 
-from .models import Rep, District, Zipcodes
+from . import models
+
+from . import forms
 
 # Create your views here.
 
-def repList(request):
-    all_objects_Rep=Rep.objects.all()
-    context={'all_objects_Rep': all_objects}
-    return render (request, 'page/base.html', context)
+def repList_view(request):
+    repResults=Rep.objects.all()
+    context={'repResults': 'all_objects'}
+    
+    return render (request, 'base.html', context)
+
+def repList2000_view(request):
+    repResults2000=Rep.objects.all()
+    context={'repResults 2000': 'all_objects'}
+    
+    return render (request, 'base.html', context)
+
+
+def repList2010_view(request):
+    repResults2010=Rep.objects.all()
+    context={'repResults 2010': 'all_objects'}
+    
+    return render (request, 'base.html', context)
 
 
 def homepage_view(request):
@@ -35,22 +49,29 @@ def results_view(request):
 
     return render(request, 'results.html', my_findings)
 
-def userInput(request):
-    try:
-        findZip=input("Enter your zipcode: ")
-        for x in district.objects.get(zip):
-            findZip == zip
-    except zip.DoesNotExist:
-        raise Http404()
+    def zipEntry_view(request):
+        my_selection = {
+            zip_form : forms.EntryForm()
+    }
+
+    return render (request, 'userInput.html', my_selection)
+
+
+#     try:
+#         findZip=input("Enter your zipcode: ")
+#         for x in district.objects.get(zip):
+#             findZip == zip
+#     except zip.DoesNotExist:
+#         raise Http404()
         # return HttpResponse(district.objects(congressional_district))
-    else:
+    # else:
         # findZip != zip
         # raise Http404("The zipcode does not exist. Please try again.")
 
     #     findName = district.objects(congressional_district)
     # for x in district.objects.get(f_name, l_name):
 
-        return render(request, context)
+        # return render(request, context)
     
     
     

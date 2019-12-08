@@ -24,7 +24,31 @@
 
 <body>
 
-{% block content %}
+
+
+{% block content %}{% endblock %} 
+
+
+    
+    {% block repList %}
+    {% for objects in all_objects_Rep %}
+    
+<table class = "RepList">
+    <tr>
+        <th>District</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+        
+    <tr>
+        <td>{{ objects.District }}</td>
+        <td>{{ objects.f_name }}</td>
+        <td>{{ objects.l_name }}</td>
+    </tr>
+    {% endfor %}
+    {% endblock %}
+</table>
+    
 
 <!-- <div class="site-container">
     <div class="row justify-content-center panel">
@@ -37,28 +61,12 @@
 </div> -->
 
 
-<div class ="RepList">
-    {% block repList %}
-<table>
-    <tr>
-        <th>Congressional_District</th>
-        <th>f_name</th>
-        <th>l_name</th>
-    </tr>
-
-    {% for x in all_objects_Rep %}
-    <tr>
-        <td>{{ x.Congressional_District }}</td>
-        <td>{{ x.f_name }}</td>
-        <td>{{ x.l_name }}</td>
-    </tr>
-    {% endfor %}
-    {% endblock %}
-</table>
-</div>
 
 
-{% endblock %} 
+
+
+
+
 
 
    

@@ -37,3 +37,16 @@ body, home.html {
    display: block;
    padding: 15px 35px;
 }
+
+.repList td,
+.repList th {
+   border: 1px solid red;
+   padding: 8px;
+}
+
+.repList th {
+   padding: 6px 0;
+   text-align: center;
+   background-color: blue;
+   color: white;
+}

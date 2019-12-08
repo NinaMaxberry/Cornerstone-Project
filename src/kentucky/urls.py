@@ -21,11 +21,13 @@ from django.conf.urls.static import static
 
 
 
+
 urlpatterns = [
     
     path('', include('page.urls')),
     path('rep/', include('page.urls', namespace='reps')),
     path('home/', include('page.urls', namespace='home')),
+    path('zip/', include('page.urls', namespace='userInput')),
     path('results/', include('page.urls', namespace='results')),
     path('admin/', admin.site.urls),
 

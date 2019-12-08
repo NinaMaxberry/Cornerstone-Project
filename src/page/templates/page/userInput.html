@@ -1,6 +1,15 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
 
+{% block title %}Enter your zipcode{% endblock %}
 
-{% if userInput %}
+{% block content %}
+    <div class = "row">
+        {{ form.as_p }}
+    </div>
+{% endblock %}
+
+<!-- {% if userInput %}
     <ul>
     {% for zip in userInput %}
         <li> <a href = "{{% url 'userInput' zip.id %}}/">{{district.zip }}</a></li>
@@ -8,4 +17,4 @@
     </ul>
     {% else %}
         <p>That zipcode is invalid.</p>
-    {% endif %}
+    {% endif %} -->

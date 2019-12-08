@@ -1,13 +1,13 @@
-import unittest
+from django.text import TestCase
 
 
 from .models import Rep, Zipcodes, District
 
 # Create your tests here.
 
-def zip(x):
-    return District.objects.filter()
-
-class RepModelTests(unittest.TestCase):
-    def test(self):
-        self.assertEqual(zip(40211),40216)
+class ZipcodesModelTests(TestCase):
+    def test_zip_creation(self):
+        zip = Zipcodes.objects.create(
+            zip = 40216
+        )
+        self.asser
