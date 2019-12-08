@@ -10,11 +10,18 @@ from . import forms
 
 # Create your views here.
 
+
+def get(self, request):
+    form = EntryForm()
+    return render(request, 'home.html', {'form': form})
+
+
 def repList_view(request):
-    repResults=Rep.objects.all()
-    context={'repResults': 'all_objects'}
-    
-    return render (request, 'base.html', context)
+    allObjRep=[Rep.objects.all()]
+    safePlay = "Will Work"
+
+    currRepList = {'safeplay': safeplay }
+    return render (request, 'base.html', currRepList)
 
 def repList2000_view(request):
     repResults2000=Rep.objects.all()
@@ -49,12 +56,12 @@ def results_view(request):
 
     return render(request, 'results.html', my_findings)
 
-    def zipEntry_view(request):
-        my_selection = {
-            zip_form : forms.EntryForm()
-    }
+    # def zipEntry_view(request):
+    #     my_selection = {
+    #         zip_form : forms.EntryForm()
+    # }
 
-    return render (request, 'userInput.html', my_selection)
+    # return render (request, 'userInput.html', my_selection)
 
 
 #     try:

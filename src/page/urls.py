@@ -8,7 +8,7 @@ app_name = 'page'
 urlpatterns = [
     path('', views.homepage_view, name='homepage_view'),
     path('rep/', views.repList_view, name='repList_view'),
-    path('zip/', views.zipEntry_view, name ='zipEntry_view'),
+    #path('zip/', views.zipEntry_view, name ='zipEntry_view'),
     path('results/', views.results_view, name='results_view'),
 
     

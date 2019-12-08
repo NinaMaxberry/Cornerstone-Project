@@ -1,7 +1,9 @@
 {% extends "base.html" %}
-{% load static from staticfiles %}
+
+
 
 {% block content %}
+
 
 
 <div class = "hometitle">
@@ -16,22 +18,17 @@
         {{block.super }}
         {{my_text}}
     {% endblock %}
-
 </div>
 
 
-<div class = "currList">
-    {% block repList %}
-        {{ block.super }}
-        {{ repList }}
-    {% endblock %}
-</div>
-
-
-
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = "char">
+    <button class="btn btn-primary" type="button">Submit</button>
+</form>
 
 {% endblock %}
-
 
 
 

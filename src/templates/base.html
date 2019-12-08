@@ -1,4 +1,4 @@
-{% load static from staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Ky Gerrymandering{% endblock %}
     </title>
+
     <link rel="stylesheet" href="{% static 'page/css/style.css' %}">
-    <link rel = "stylesheet" href="{% static 'page/images' %}">
+    <link rel = "stylesheet" href="{% static 'page/images/kentucky.jpg' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -24,40 +25,47 @@
 
 <body>
 
-
-
-{% block content %}{% endblock %} 
-
-
+<div class="container">
     
-    {% block repList %}
-    {% for objects in all_objects_Rep %}
-    
-<table class = "RepList">
-    <tr>
-        <th>District</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-    </tr>
+            <div class = "image">
+                <img src="page\static\page\images\Kentucky.jpg" alt="outline of kentucky"></img> 
+            </div>
         
+
+
+
+{% block content %}
+{% endblock %} 
+
+
+
+<!-- <ul>
+    {% for each in Rep.objects.all %}
+    <li>{{all_objects_rep}}</li>
+    {% endfor %}
+
+</ul> -->
+    
+   
+<!-- <table class="table .table-sm">
+    <thead>
+        <tr>
+            <th scope="col">District</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+
     <tr>
-        <td>{{ objects.District }}</td>
-        <td>{{ objects.f_name }}</td>
-        <td>{{ objects.l_name }}</td>
+        {% for object in currRepList %}
+        <th scope = "row"></th>
+        <td>{{ District }}</td>
+        <td>{{ f_name }}</td>
+        <td>{{ l_name }}</td>
     </tr>
     {% endfor %}
-    {% endblock %}
 </table>
-    
-
-<!-- <div class="site-container">
-    <div class="row justify-content-center panel">
-        <div class = "col-md-5">
-            <div class = "image">
-                <img src="images\Kentucky.jpg" alt="outline of kentucky"></img> 
-            </div>
-        </div>
-    </div>
 </div> -->
 
 
@@ -66,10 +74,5 @@
 
 
 
-
-
-
-   
-
-</body>
+    </body>
 </html>

@@ -140,6 +140,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, '/static/'),
+    "/kentucky/page/static/page/images/kentucky.jpg",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/page'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/'),
+
