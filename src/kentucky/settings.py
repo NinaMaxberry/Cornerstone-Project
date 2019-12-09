@@ -40,10 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-    # my apps
-    'zip',
-    'csvimport',
-
 ]
 
 MIDDLEWARE = [

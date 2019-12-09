@@ -17,10 +17,9 @@ def get(self, request):
 
 
 def repList_view(request):
-    allObjRep=[Rep.objects.all()]
-    safePlay = "Will Work"
+    all_objects=Rep.objects.all()
+    currRepList = {'all_objects': all_objects}
 
-    currRepList = {'safeplay': safeplay }
     return render (request, 'base.html', currRepList)
 
 def repList2000_view(request):
