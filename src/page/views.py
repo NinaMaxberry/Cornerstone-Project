@@ -11,11 +11,42 @@ from . import forms
 # Create your views here.
 
 
-def get(self, request):
-    form = EntryForm()
+def ZipUser_view(request):
+    if request.method == "GET":
+        form = EntryForm()
+
+        if form.is_valid():
+            ZipUser = EntryForm.cleaned_data['ZipUser_view']
+
+    else:
+        zipUser = EntryForm()
+
     return render(request, 'home.html', {'form': form})
 
 
+# def EntryForm(self, get):
+#         my_selection = {
+#             zip_form : forms.EntryForm()
+#     }
+
+    # return render (request, 'userInput.html', my_selection)
+
+
+#     try:
+#         findZip=input("Enter your zipcode: ")
+#         for x in district.objects.get(zip):
+#             findZip == zip
+#     except zip.DoesNotExist:
+#         raise Http404()
+        # return HttpResponse(district.objects(congressional_district))
+    # else:
+        # findZip != zip
+        # raise Http404("The zipcode does not exist. Please try again.")
+
+    #     findName = district.objects(congressional_district)
+    # for x in district.objects.get(f_name, l_name):
+
+        # return render(request, context)
 def repList_view(request):
     all_objects=Rep.objects.all()
     currRepList = {'all_objects': all_objects}
@@ -55,29 +86,7 @@ def results_view(request):
 
     return render(request, 'results.html', my_findings)
 
-    # def zipEntry_view(request):
-    #     my_selection = {
-    #         zip_form : forms.EntryForm()
-    # }
-
-    # return render (request, 'userInput.html', my_selection)
-
-
-#     try:
-#         findZip=input("Enter your zipcode: ")
-#         for x in district.objects.get(zip):
-#             findZip == zip
-#     except zip.DoesNotExist:
-#         raise Http404()
-        # return HttpResponse(district.objects(congressional_district))
-    # else:
-        # findZip != zip
-        # raise Http404("The zipcode does not exist. Please try again.")
-
-    #     findName = district.objects(congressional_district)
-    # for x in district.objects.get(f_name, l_name):
-
-        # return render(request, context)
+    
     
     
     

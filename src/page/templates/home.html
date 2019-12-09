@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+from . import forms
+from . import views
 
 
 {% block content %}
@@ -20,13 +21,16 @@
     {% endblock %}
 </div>
 
+<div class="getZip">
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
+<form name = "EntryForm" action = "{% url "page\views\ZipUser" %}"
+method = "GET" >{% csrf_token %}
+    {{ Entryform.as_p }}
     <input type = "char">
     <button class="btn btn-primary" type="button">Submit</button>
 </form>
+</div>
+
 
 {% endblock %}
 

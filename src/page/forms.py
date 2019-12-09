@@ -1,7 +1,7 @@
 from django import forms
 
 class EntryForm(forms.Form):
-    zip_by_user = forms.CharField()
+    zipUser = forms.CharField(max_length=5)
 
 
 
