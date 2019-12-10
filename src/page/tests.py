@@ -11,3 +11,17 @@ class ZipcodesModelTests(TestCase):
             zip = 40216
         )
         self.asser
+
+
+def zipUser_view(request):
+    if request.method == "GET":
+        form = EntryForm()
+
+        if form.is_valid():
+            zipUser_view = EntryForm.cleaned_data['zipUser_view']
+
+    else:
+        zipUser_view = EntryForm()
+
+    return render(request, 'home.html', {'form': form})
+

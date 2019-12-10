@@ -11,15 +11,15 @@ from . import forms
 # Create your views here.
 
 
-def ZipUser_view(request):
+def zipUser_view(request):
     if request.method == "GET":
         form = EntryForm()
 
         if form.is_valid():
-            ZipUser = EntryForm.cleaned_data['ZipUser_view']
+            zipUser_view = EntryForm.cleaned_data['zipUser_view']
 
     else:
-        zipUser = EntryForm()
+        zipUser_view = EntryForm()
 
     return render(request, 'home.html', {'form': form})
 

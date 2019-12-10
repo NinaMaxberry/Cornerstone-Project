@@ -79,13 +79,16 @@ WSGI_APPLICATION = 'kentucky.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': "C:\Dev\dataFiles\Zipcodes.sqlite3",
+        'NAME': "C:\Dev\dataFiles\District.sqlite3",
+        'NAME': "C:\Dev\dataFiles\rep.sqlite3",
 
     }
 
          
         
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
 
     
        
@@ -133,7 +136,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, '/static/'),
-    "/kentucky/page/static/page/images/kentucky.jpg",
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/'),
