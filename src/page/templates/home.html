@@ -24,7 +24,7 @@ from . import views
 <div class="getZip">
 
 <form name = "EntryForm" action = "{% url 'page:zipUsercd' %}"
-method = "GET" >{% csrf_token %}
+method = "POST" >{% csrf_token %}
     {{ Entryform.as_p }}
     <input type = "char">
     <button class="btn btn-primary" type="button">Submit</button>

@@ -79,21 +79,20 @@ WSGI_APPLICATION = 'kentucky.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': "C:\Dev\dataFiles\Zipcodes.sqlite3",
-        'NAME': "C:\Dev\dataFiles\District.sqlite3",
-        'NAME': "C:\Dev\dataFiles\rep.sqlite3",
-
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': ('C:\Dev\gerry\src\KentuckyProject.db'),
+       
     }
 
-         
+}
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))        
         
         
 
     
        
     
-}
+
 
 
 # Password validation
@@ -138,5 +137,6 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, '/static/'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'static'),
+
 

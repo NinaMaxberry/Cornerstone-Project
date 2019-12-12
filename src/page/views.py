@@ -2,24 +2,54 @@ from django.urls import path
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-
+from django.views.generic import TemplateView, FormView
 
 from . import models
 
-from . import forms
+from page.forms import forms
 
 # Create your views here.
 
+class homepage_view(TemplateView):
+    template_name = 'home.html'
+    correct_url = '/thanks/'
+
+    def get(self, request):
+        form = EntryForm
+        return render()
+
+
+def homepage_view(request):
+    my_description = {
+        "my_text" : "Thanks for your interest in discovering your past and present local congressional district information.  Did you know that your district is determined by your residence zip code?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress).",
+        "home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
+
+    }
+    return render(request, 'home.html', my_description)
+    
+    # def form_valid(self, form):
+    #     return super().form_valid(form)
+
+    
+def results_view(request):
+    my_findings = {
+        "my_vision" : "During the 110th Congress, the following were the congressional representatives for Kenutcky.",
+        "my_return" : "Your Kentucky Congressional District is:", #need to connect to zipcode search thru database for results - execute on html? Double check db for 2000 data
+        "dist_outline" : "mapfile", # should be in static files as image - transparent
+    }
+
+    return render(request, 'results.html', my_findings)
+
 
 def zipUser_view(request):
+
     if request.method == "GET":
         form = EntryForm()
 
-        if form.is_valid():
-            zipUser_view = EntryForm.cleaned_data['zipUser_view']
+    if form.is_valid():
+        zipUser_view = EntryForm.cleaned_data['zipUser_view']
 
-    else:
-        zipUser_view = EntryForm()
+        # zipUser_view = EntryForm()
 
     return render(request, 'home.html', {'form': form})
 
@@ -47,44 +77,18 @@ def zipUser_view(request):
     # for x in district.objects.get(f_name, l_name):
 
         # return render(request, context)
-def repList_view(request):
-    all_objects=Rep.objects.all()
-    currRepList = {'all_objects': all_objects}
+# def repList_view(request):
+#     all_objects=Rep.objects.all()
+#     currRepList = {'all_objects': all_objects}
 
-    return render (request, 'base.html', currRepList)
+#     return render (request, 'base.html', currRepList)
 
-def repList2000_view(request):
-    repResults2000=Rep.objects.all()
-    context={'repResults 2000': 'all_objects'}
-    
-    return render (request, 'base.html', context)
+# def zips(response):  #to match zips with input and db
+#     zipper = ProjectCode.objects.get(zip=zip)
+#     return HttpRespnse("<h1>%s</h>")
 
 
-def repList2010_view(request):
-    repResults2010=Rep.objects.all()
-    context={'repResults 2010': 'all_objects'}
-    
-    return render (request, 'base.html', context)
 
-
-def homepage_view(request):
-    my_description = {
-        "my_text" : "Thanks for your interest in discovering your past and present local congressional district information.  Did you know that your district is determined by your residence zip code?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress).",
-        "home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
-        #"currentReps" : "The current representatives for all districts in Kentucky are:",
-        #"userZip" : "Please enter your zip code.",
-    }
-    return render(request, 'home.html', my_description)
-
-    
-def results_view(request):
-    my_findings = {
-        "my_vision" : "During the 110th Congress, the following were the congressional representatives for Kenutcky.",
-        "my_return" : "Your Kentucky Congressional District is:", #need to connect to zipcode search thru database for results - execute on html? Double check db for 2000 data
-        "dist_outline" : "mapfile", # should be in static files as image - transparent
-    }
-
-    return render(request, 'results.html', my_findings)
 
     
     
