@@ -1,18 +1,18 @@
-import unittest
-
-from django.test import Client
-
-
-from .models import KentuckyProject
+from django.test import TestCase
+#from page.models import KentuckyProject
 
 # Create your tests here.
-class SimpleTest(unittest.TestCase):
-    def test_details(self):
-        client = Client()
-        response = client.get('/customer/details/')
-        self.assertEqual(response.status_code, 200)
 
-    def test_index(self):
-        client = Client()
-        response = client.get('/customer/index/')
-        self.assertEqual(response.status_code, 200)
+class KentuckyProjectTestCase(TestCase):
+    def setUp(self):
+        KentuckyProject.objects.create(zip="00001")
+        KentuckyProject.objects.create(county="Sjeij;jk")
+
+#     def test_
+
+# class CsvTestCase()
+
+# conn = sqlite3.connect('KentuckyProject')
+# c = conn.cursor()
+# c.execute('CREATE TABLE IF NOT EXISTS KentukyProject_Info (zip CHAR, District INTEGER. CongressDistrict INTEGER, First_Name TEXT, Last_Name TEXT)')
+# conn.commit()

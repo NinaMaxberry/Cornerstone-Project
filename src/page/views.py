@@ -1,8 +1,12 @@
+import io, csv
+
 from django.urls import path
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
 from django.views.generic import TemplateView, FormView
+
 
 from . import models
 
@@ -10,13 +14,13 @@ from page.forms import forms
 
 # Create your views here.
 
-class homepage_view(TemplateView):
-    template_name = 'home.html'
-    correct_url = '/thanks/'
+# class homepage_view(TemplateView):
+#     template_name = 'home.html'
+#     correct_url = '/thanks/'
 
-    def get(self, request):
-        form = EntryForm
-        return render()
+#     def get(self, request):
+#         form = EntryForm
+#         return render()
 
 
 def homepage_view(request):
@@ -43,40 +47,70 @@ def results_view(request):
 
 def zipUser_view(request):
 
-    if request.method == "GET":
-        form = EntryForm()
+    if request.method == "POST":
+        form = EntryForm(request.POST)
 
-    if form.is_valid():
-        zipUser_view = EntryForm.cleaned_data['zipUser_view']
+    #def acceptable(self):
+        if form.is_valid():
+            try:
+                p = KentuckyProject.objects.get(zip)  #to match zip
+
+                accept_data = (EntryForm, self).clean()
+                zipUser = accept_data.get("zipUser")
+
+                #zipUser = EntryForm.cleaned_data['zipUser']
+
+            except KentuckyProject.DoesNotExist:
+                raise forms.ValidationError("The zipcode does not exist")
+            
+        return redirect('results/')
 
         # zipUser_view = EntryForm()
 
-    return render(request, 'home.html', {'form': form})
+    #return render(request, 'results.html', {'form': form})
 
 
-# def EntryForm(self, get):
-#         my_selection = {
-#             zip_form : forms.EntryForm()
-#     }
-
-    # return render (request, 'userInput.html', my_selection)
 
 
-#     try:
-#         findZip=input("Enter your zipcode: ")
-#         for x in district.objects.get(zip):
-#             findZip == zip
-#     except zip.DoesNotExist:
-#         raise Http404()
-        # return HttpResponse(district.objects(congressional_district))
-    # else:
-        # findZip != zip
-        # raise Http404("The zipcode does not exist. Please try again.")
 
-    #     findName = district.objects(congressional_district)
-    # for x in district.objects.get(f_name, l_name):
+def Csv_upload(request):
+    template = "csv_upload.html"
+    
+    prompt = {
+        'order': 'Order of the CSV should be Zip, District, CongressDistrict, First_Name, Last_Name, message',
+           
+    }
 
-        # return render(request, context)
+# GET request for all data
+    if request.method == "GET":
+        return render (request, template, prompt)
+
+    csv_file = request.FILES['file']
+
+#Is csv file a valid csv file
+    if not csv_file.name.endswith('.csv'):
+        messages.error(request, 'This is not a csv file')
+
+    data_set = csv_file.read().decode('UTF-8')
+    io_string = io.StringIO(data_set)  #create stream of input or output validation to loop through the data
+    next(io_string)  #next row is read - header skipped
+
+    for column in csv.reader(io_string, delimiter= ', ', quotechar="|"):
+        _, created = Csv.objects.update_or_create(
+#identify index/order of each column
+            zip = column[0],
+            primary_city = column[1],
+            county = column[2],
+            area_codes = column[3],
+            message = column[4]
+
+        )
+    context = {}
+    return render(request, template, context )
+
+# 
+
+
 # def repList_view(request):
 #     all_objects=Rep.objects.all()
 #     currRepList = {'all_objects': all_objects}

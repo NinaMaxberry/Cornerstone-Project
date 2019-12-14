@@ -19,18 +19,20 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 
 
+from page.views import home, Csv_upload, zipUser, results_view
+
 
 
 
 urlpatterns = [
     
-    path('', include('page.urls')),
-    #path('rep/', include('page.urls', namespace='reps')),
-    path('home/', include('page.urls', namespace='home')),
-    #path('zip/', include('page.urls', namespace='zipUsercd')),
-    path('results/', include('page.urls', namespace='results')),
+    path('', include('page.urls', namespace="homepage")),
+    # path('upload-csv/', include('page.urls', namespace='csv_upload')),
+    # path('home/', include('page.urls', namespace='homepage')),
+    # path('zip/', include('page.urls', namespace='zipUsercd')),
+    # path('results/', include('page.urls', namespace='results_view')),
     path('admin/', admin.site.urls),
-
+    
 ]
 
 urlpatterns += staticfiles_urlpatterns()

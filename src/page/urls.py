@@ -1,13 +1,14 @@
-from django.urls import path, include
+from django.urls import include, path
 from django.contrib import admin
 
 
-from . import views
+from page import views
 
 app_name = 'page'
+
 urlpatterns = [
-    path('', views.homepage_view, name='homepage_view'),
-    #path('rep/', views.repList_view, name='repList_view'),
+    path('homepage/', views.homepage_view, name='homepage'),
+    path('upload-csv/', views.Csv_upload, name='csv_upload'),
     path('zip/', views.zipUser_view, name = 'zipUsercd'),
     path('results/', views.results_view, name='results_view'),
 

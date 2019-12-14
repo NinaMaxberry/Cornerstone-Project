@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'kentucky.urls'
+ROOT_URLCONF = 'page.urls'
 
 TEMPLATES = [
     {

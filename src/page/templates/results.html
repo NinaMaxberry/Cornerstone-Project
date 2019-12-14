@@ -3,21 +3,22 @@
 {% block content %}
 
 <div class='lanaguage'>
-{% block language %}
+    {% block language %}
     <!-- {{block.super }} -->
         {{my_vision|linebreaks }}
     <!-- {{block.super }} -->
         {{my_return}}
-{% endblock %}            
+    {% endblock %}            
 </div>
 
+<div class='ziput'>
+    {% block ziput %}
+        {{ EntryForm }}
+    {% endblock ziput %}
+</div>
 
 <table class=repNames>
     <th></th>
 </table>
-
-
-
-
 
 {% endblock %}
