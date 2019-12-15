@@ -10,7 +10,7 @@ from django.views.generic import TemplateView, FormView
 
 from . import models
 
-from page.forms import forms
+from page.forms import *
 
 # Create your views here.
 
@@ -37,7 +37,7 @@ def homepage_view(request):
     
 def results_view(request):
     my_findings = {
-        "my_vision" : "During the 110th Congress, the following were the congressional representatives for Kenutcky.",
+        "my_vision" : "During the 110th Congress (year 2000), the following were the congressional representatives for Kenutcky.",
         "my_return" : "Your Kentucky Congressional District is:", #need to connect to zipcode search thru database for results - execute on html? Double check db for 2000 data
         "dist_outline" : "mapfile", # should be in static files as image - transparent
     }
@@ -73,7 +73,7 @@ def zipUser_view(request):
 
 
 
-def Csv_upload(request):
+def csvUpload(request):
     template = "csv_upload.html"
     
     prompt = {
@@ -108,20 +108,32 @@ def Csv_upload(request):
     context = {}
     return render(request, template, context )
 
-# 
+
+def display_ky_image(request):
+    template = 'display_ky_image.html'
+    if request.method == 'GET':
+
+        KyImages = KyImage.objects.all()
+    return render(request, template)
 
 
-# def repList_view(request):
-#     all_objects=Rep.objects.all()
-#     currRepList = {'all_objects': all_objects}
-
-#     return render (request, 'base.html', currRepList)
-
-# def zips(response):  #to match zips with input and db
-#     zipper = ProjectCode.objects.get(zip=zip)
-#     return HttpRespnse("<h1>%s</h>")
+    
 
 
+
+# def KyImage_view(request):
+#     if request.method == 'POST':
+#         form = KyForm(request.POST, request.FILES)
+
+#         if form.is_valid():
+#             form.save()
+#             return redirect('success')
+#     else:
+#         form = KyForm()
+#     return render (request, 'kyimage.html', {'form' : form})
+
+# def success(request):
+#     return HttpResponse('successfully uploaded')
 
 
     

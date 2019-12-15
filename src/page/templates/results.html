@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 
+from . import forms
+from . import views
+
 {% block content %}
 
-<div class='lanaguage'>
+<div class='language'>
     {% block language %}
-    <!-- {{block.super }} -->
+        {{block.super }}
         {{my_vision|linebreaks }}
-    <!-- {{block.super }} -->
+        {{block.super }}
         {{my_return}}
     {% endblock %}            
 </div>
@@ -17,8 +20,8 @@
     {% endblock ziput %}
 </div>
 
-<table class=repNames>
+<!-- <table class=repNames>
     <th></th>
-</table>
+</table> -->
 
 {% endblock %}

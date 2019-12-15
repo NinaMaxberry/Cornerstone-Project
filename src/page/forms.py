@@ -1,5 +1,5 @@
 from django import forms
-from .models import KentuckyProject
+from .models import *
 
 # class EntryForm(forms.Form):
 #     zipUser = forms.CharField(label="Enter your zipcode"  max_length=5)
@@ -18,8 +18,14 @@ class EntryForm(forms.Form):
     zipUser = forms.CharField(label="Enter your zipcode", max_length=5)
 
     
-    
+class KyForm(forms.ModelForm):
 
+    class Meta:
+        model=KyImage
+        fields = ['name', 'outlineImg']  
+
+    
+    
     #return render (request, 'userInput.html', my_selection)
 
 
