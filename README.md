@@ -89,5 +89,12 @@ Allow user input to compare the transition/change (if any) in congressional voti
     # Week of Nov 25th - View/Query
     # Week of Dec 2nd - Test
 
+To access website:
+Open Repository from broswer https://github.com/NinaMaxberry/Cornerstone-Project
+Open in VSC by cloning or downloading
+No keys (authencation are required)
+Go to C:/Dev/gerry/scr and run python mangage.py runserver
+Open local host: http://127.0.0.8000
+Type zipcode to search for database match
 
 
