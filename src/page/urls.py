@@ -14,6 +14,6 @@ urlpatterns = [
     path('upload/', views.csvUpload, name='csv_upload'),
     path('zip/', views.zipUser_view, name = 'zipUser_view'),
     path('results/', views.results_view, name='results_view'),
-    path('ky_outline/', views.display_ky_image, name = 'ky_image'),
+    # path('ky_outline/', views.display_ky_image, name = 'ky_image'),
     
 ]

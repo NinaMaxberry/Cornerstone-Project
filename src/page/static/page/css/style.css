@@ -1,0 +1,67 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: auto;
+   height: 50%;
+   
+}
+
+/* .outline {
+   background-position: center;
+   background-repeat: no-repeat;
+   opacity: .05;
+
+} */
+/* .image {
+   background-image: url("kentucky.jpg");
+   height: 50%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+} */
+
+.container {
+   height: auto;
+   padding: 15px 25px;
+}
+
+.navbar ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   color: black;
+}
+
+.hometitle {
+   color: blue;
+   text-align: center;
+   font-size: 24px;
+   padding: 25px 0 15px 0;
+}
+
+.intro {
+   display: block;
+   padding: 15px 35px;
+   text-align: center;
+}
+
+.language {
+   display: block;
+   padding: 15px 35px;
+}
+
+
+.repList td,
+.repList th {
+   border: 1px solid red;
+   padding: 8px;
+}
+
+.repList th {
+   padding: 6px 0;
+   text-align: center;
+   background-color: blue;
+   color: white;
+}

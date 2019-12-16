@@ -24,19 +24,23 @@
 
 <body>
 
+{% block content %}{% endblock %}   
+
 <div class="container">
-    <div class="outline">
-    <img src="{% static '/Dev/gerry/src/kentucky/static/images/Ky Outline.png.ext' %}"/>
+    <div class = "row">
+        <div class = "col-md"></div>
+        <div class="outline">
+        <img src="{% static 'page/images/KyOutline.png' %}" alt="Outline of Kentucky">
+        </div>
     </div>
 </div>
 
-
-        
-
+      
 
 
-{% block content %}
-{% endblock %} 
+
+
+
     
 <!-- <table class="table .table-sm">
     <thead>

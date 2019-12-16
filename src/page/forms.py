@@ -24,6 +24,9 @@ class KyForm(forms.ModelForm):
         model=KyImage
         fields = ['name', 'outlineImg']  
 
+class homeIntro(forms.Form):
+    my_text = forms.CharField(max_length=500)
+
     
     
     #return render (request, 'userInput.html', my_selection)

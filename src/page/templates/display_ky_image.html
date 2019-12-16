@@ -6,13 +6,13 @@
 {% block image %}
 {% endblock %}  
 
-   <!-- {% for image in ky_images %}
+   {% for image in ky_images %}
       <div class = "col-md-4">
          {{ KyImage.name }}
-         <img src = "{{ STATIC_URL }} images/KyOutline.png}}" class='img-responsive'></img>
+         <img src = "{% static 'page/images/KyOutline.png' %}" class='img-responsive'></img>
    {% endfor %}
       
-      </div> -->
+      </div>
 
 
-  
+     

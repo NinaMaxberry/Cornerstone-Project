@@ -14,22 +14,23 @@ from page.forms import *
 
 # Create your views here.
 
-# class homepage_view(TemplateView):
-#     template_name = 'home.html'
-#     correct_url = '/thanks/'
-
-#     def get(self, request):
-#         form = EntryForm
-#         return render()
-
 
 def homepage_view(request):
     my_description = {
-        "my_text" : "Thanks for your interest in discovering your past and present local congressional district information.  Did you know that your district is determined by your residence zip code?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress).",
+        "my_text" : "Every ten years, the US Census Bureau conducts a survey to measure changes (+/-) in several areas of the economy across the country. These areas include concentrations or shifts in population, employment, income, poverty and many other areas.  One of the areas that are affected by the census is your voting rights or more formally stated how voting district boundaries are drawn. Did you know that your district is determined by your residence zip code in Kentucky?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress) of today.",
         "home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
-
     }
+    # module_dir = os.path.dirname(__file__)
+    # file_path = os.path.join(module_dir, 'my_text.txt')
+    # data_file = open(file_path, 'r')
+    # data = data_file.read()
+    # context = {'intro' : data}
     return render(request, 'home.html', my_description)
+
+    
+
+    
+    # return render(request, 'home.html', my_description)
     
     # def form_valid(self, form):
     #     return super().form_valid(form)
@@ -109,12 +110,12 @@ def csvUpload(request):
     return render(request, template, context )
 
 
-def display_ky_image(request):
-    template = 'display_ky_image.html'
-    if request.method == 'GET':
+# def display_ky_image(request):
+#     template = 'display_ky_image.html'
+#     if request.method == 'GET':
 
-        KyImages = KyImage.objects.all()
-    return render(request, template)
+#         KyImages = KyImage.objects.all()
+#     return render(request, template)
 
 
     
