@@ -1,9 +1,9 @@
-from django.db import models 
+from .models import KentuckyProject, Csv
 
 
 # Create your models here.
 
-class KentuckyProject(models.Model):
+class zipUser(models.Model):
     Zip = models.IntegerField()
     District = models.IntegerField()
     CongressDistrict = models.TextField()
@@ -27,8 +27,8 @@ class Csv(models.Model):
     def __str__(self):
         return f'{self.zip} {self.primary_city} {self.county} {self.area_codes} {self.message}'
 
-class KyImage(models.Model):
-    name = models.CharField(max_length=50)
-    outlineImg = models.ImageField(default='null')
+# class KyImage(models.Model):
+#     name = models.CharField(max_length=50)
+#     outlineImg = models.ImageField(default='null')
 
 

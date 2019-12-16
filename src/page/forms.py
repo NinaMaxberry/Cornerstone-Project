@@ -18,11 +18,11 @@ class EntryForm(forms.Form):
     zipUser = forms.CharField(label="Enter your zipcode", max_length=5)
 
     
-class KyForm(forms.ModelForm):
+# class KyForm(forms.ModelForm):
 
-    class Meta:
-        model=KyImage
-        fields = ['name', 'outlineImg']  
+#     class Meta:
+#         model=KyImage
+#         fields = ['name', 'outlineImg']  
 
 class homeIntro(forms.Form):
     my_text = forms.CharField(max_length=500)
