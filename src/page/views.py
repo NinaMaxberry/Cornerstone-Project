@@ -17,25 +17,17 @@ from page.forms import *
 
 def homepage_view(request):
     my_description = {
-        "my_text" : "Every ten years, the US Census Bureau conducts a survey to measure changes (+/-) in several areas of the economy across the country. These areas include concentrations or shifts in population, employment, income, poverty and many other areas.  One of the areas that are affected by the census is your voting rights or more formally stated how voting district boundaries are drawn. Did you know that your district is determined by your residence zip code in Kentucky?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts.  We will look at the representatives from the 110th Congress (year 2000) with your zip code and compare them with your present representatives (116th Congress) of today.",
+        "my_text1" : "Every ten years, the US Census Bureau conducts a survey to measure changes (+/-) in several areas of the economy across the country. These areas include concentrations or shifts in population, employment, income, poverty and many other areas.",
+        "my_text2" : "One of the areas that are affected by the census is your voting rights or more formally stated how voting district boundaries are drawn. Did you know that your district is determined by your residence zip code in Kentucky?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts. (Note: some zip codes cross county lines).",
+        "my_text3" : "Congress holds two sessions, but for simplicity, we will only present the specific Census years.",
+        "my_text4" : "We will look at the representatives from the 106th Congress (Census year 2000), the representatives from the  111th Congress (Census year 2010) and compare them with your zip code of your present representatives (116th Congress) of today.",
+
         "home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
     }
-    # module_dir = os.path.dirname(__file__)
-    # file_path = os.path.join(module_dir, 'my_text.txt')
-    # data_file = open(file_path, 'r')
-    # data = data_file.read()
-    # context = {'intro' : data}
+    
     return render(request, 'home.html', my_description)
 
-    
-
-    
-    # return render(request, 'home.html', my_description)
-    
-    # def form_valid(self, form):
-    #     return super().form_valid(form)
-
-    
+   
 def results_view(request):
     my_findings = {
         "my_vision" : "During the 110th Congress (year 2000), the following were the congressional representatives for Kenutcky.",

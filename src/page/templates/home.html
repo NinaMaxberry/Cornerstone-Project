@@ -4,52 +4,25 @@ from . import views
 
 
 {% block content %}
-<!-- {% block language %}
-    {{block.super }}
-    {{my_vision|linebreaks }}
-    {{block.super }}
-    {{my_return}}
-{% endblock %}             -->
-<div>div class='language'>
-{% block text %}
-    {{block.super }}
-    {{my_vision|linebreaks }}
-    {{block.super }}
-    {{my_return}}
-{% endblock %}            
-</div>
-
-<!-- div class='language'>
-    {% block language %}
-        {{block.super }}
-        {{my_vision|linebreaks }}
-        {{block.super }}
-        {{my_return}}
-    {% endblock %}             -->
-</div>
-<!-- <div class='language'>
-    {% block language %}
-        {{block.super }}
-        {{my_vision|linebreaks }}
-        {{block.super }}
-        {{my_return}}
-    {% endblock %}            
-</div> -->
-
 <div class = 'hometitle'>
     {% block hometitle %}
         {{ block.super }}
         {{ home_title|linebreaks }}
-        {{block.super }}
-        {{intro}}
     {% endblock %}
 </div>
 
-<!-- <div class="intro">
-    {% block intro %}
-        
+<div class= 'my_text'>
+    {% block my_text %}
+        {{ block.super }}
+        {{ my_text1|linebreaks }}
+        {{ block.super }}
+        {{ my_text2|linebreaks }}
+        {{ block.super }}
+        {{ my_text3|linebreaks }}
+        {{ block.super }}
+        {{ my_text4|linebreaks }}
     {% endblock %}
-</div> -->
+</div>
 
 <div class="getZip">
 
@@ -61,7 +34,7 @@ method = "POST" >{% csrf_token %}
 </form>
 </div>
 
-
+{% endblock %}
 
 
 

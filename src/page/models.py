@@ -1,4 +1,4 @@
-from .models import KentuckyProject, Csv
+from django.db import models
 
 
 # Create your models here.

@@ -24,19 +24,22 @@
 
 <body>
 
-{% block content %}{% endblock %}   
+
 
 <div class="container">
     <div class = "row">
-        <div class = "col-md"></div>
-        <div class="outline">
-        <img src="{% static 'page/images/KyOutline.png' %}" alt="Outline of Kentucky">
+        <div class = "col-md">
+            <div class="outline">
+            <img src="{% static 'page/images/KyOutline.png' %}" alt="Outline of Kentucky">
+            </div>
+                <div class="currentreps">
+                    
+                </div>
         </div>
     </div>
 </div>
-
-      
-
+     
+{% block content %}{% endblock %} 
 
 
 
