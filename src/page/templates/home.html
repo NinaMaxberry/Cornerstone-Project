@@ -21,18 +21,11 @@ from . import views
         {{ my_text3|linebreaks }}
         {{ block.super }}
         {{ my_text4|linebreaks }}
+        {{ block.super }}
+        {{ start|linebreaks }}
     {% endblock %}
 </div>
 
-<div class="getZip">
-
-<form action = "{% url 'zipUser_view' %}"
-method = "POST" >{% csrf_token %}
-    {{ Entryform.as_p }}
-    <input type = "char">
-    <button class="btn btn-primary" type="button">Submit</button>
-</form>
-</div>
 
 {% endblock %}
 

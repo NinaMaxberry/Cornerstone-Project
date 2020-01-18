@@ -3,7 +3,7 @@ from .models import *
 
 # class EntryForm(forms.Form):
 #     zipUser = forms.CharField(label="Enter your zipcode"  max_length=5)
-
+       
 #     def acceptable(self):
 #         accept_data = super(EntryForm, self).clean()
 #         zipUser = accept_data.get("zipUser")
@@ -14,8 +14,8 @@ from .models import *
 #                     raise forms.ValidationError(
 #                         "Zipcode does not exist")
 
-class EntryForm(forms.Form):
-    zipUser = forms.CharField(label="Enter your zipcode", max_length=5)
+# class EntryForm(forms.Form):
+#     zipUser = forms.CharField(label="Enter your zipcode", max_length=5)
 
     
 # class KyForm(forms.ModelForm):
@@ -24,8 +24,8 @@ class EntryForm(forms.Form):
 #         model=KyImage
 #         fields = ['name', 'outlineImg']  
 
-class homeIntro(forms.Form):
-    my_text = forms.CharField(max_length=500)
+# class homeIntro(forms.Form):
+#     my_text = forms.CharField(max_length=500)
 
     
     

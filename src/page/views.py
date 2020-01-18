@@ -17,17 +17,23 @@ from page.forms import *
 
 def homepage_view(request):
     my_description = {
-        "my_text1" : "Every ten years, the US Census Bureau conducts a survey to measure changes (+/-) in several areas of the economy across the country. These areas include concentrations or shifts in population, employment, income, poverty and many other areas.",
-        "my_text2" : "One of the areas that are affected by the census is your voting rights or more formally stated how voting district boundaries are drawn. Did you know that your district is determined by your residence zip code in Kentucky?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts. (Note: some zip codes cross county lines).",
-        "my_text3" : "Congress holds two sessions, but for simplicity, we will only present the specific Census years.",
-        "my_text4" : "We will look at the representatives from the 106th Congress (Census year 2000), the representatives from the  111th Congress (Census year 2010) and compare them with your zip code of your present representatives (116th Congress) of today.",
 
         "home_title" : "How The Congressional Districts In KY Have Changed Through The Census",
+
+        "my_text1" : "Every ten years, the US Census Bureau conducts a survey to measure changes (+/-) in several areas of the economy across the country. These areas include concentrations or shifts in population, employment, income, poverty and many other areas.",
+
+        "my_text2" : "One of the areas that are affected by the census is your voting rights or more formally stated how voting district boundaries are drawn using the census. Did you know that your district is determined by your residence zip code in Kentucky?  Each zip code points to a county in Kentucky and the counties are grouped into one of six congressional districts. (Note: some zip codes cross county lines).",
+
+        "my_text3" : "Congress holds two sessions during one year, but for simplicity, we will only present the specific Census years.",
+
+        "my_text4" : "We will look at the representatives from the 106th Congress (Census year 2000), the representatives from the  111th Congress (Census year 2010) and compare them with your zip code of your present representatives (116th Congress) of today.",
+
+        "start" : "Below you will find options to search for the representative in your district for 2000, 2010 and now. Will the same representive exist for all years or will there be different representatives based on the zip code you enter?",
     }
     
     return render(request, 'home.html', my_description)
 
-   
+
 def results_view(request):
     my_findings = {
         "my_vision" : "During the 110th Congress (year 2000), the following were the congressional representatives for Kenutcky.",
@@ -43,7 +49,7 @@ def zipUser_view(request):
     if request.method == "POST":
         form = EntryForm(request.POST)
 
-    #def acceptable(self):
+    def acceptable(self):
         if form.is_valid():
             try:
                 p = KentuckyProject.objects.get(zip)  #to match zip
@@ -57,6 +63,12 @@ def zipUser_view(request):
                 raise forms.ValidationError("The zipcode does not exist")
             
         return redirect('results/')
+
+   
+
+
+
+
 
         # zipUser_view = EntryForm()
 
@@ -102,31 +114,13 @@ def csvUpload(request):
     return render(request, template, context )
 
 
-# def display_ky_image(request):
-#     template = 'display_ky_image.html'
-#     if request.method == 'GET':
 
-#         KyImages = KyImage.objects.all()
-#     return render(request, template)
 
 
     
 
 
 
-# def KyImage_view(request):
-#     if request.method == 'POST':
-#         form = KyForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             form.save()
-#             return redirect('success')
-#     else:
-#         form = KyForm()
-#     return render (request, 'kyimage.html', {'form' : form})
-
-# def success(request):
-#     return HttpResponse('successfully uploaded')
 
 
     
@@ -140,19 +134,7 @@ def csvUpload(request):
     
     
     
-    #useZip=input("Enter your zipcode: ")
-    #template = loader.get_template('page/userInput.html')
-    #context = {'userInput': ''}
     
-    # try:
-    #     usezip = zip.objects.get(zip)
-    #     return HttpResponse(template.render(context, request)) #double check - should it be content=b''
-
-    # except usezip.DoesNotExist:
-    #         raise Http404("The zipcode does not exist. Please try again.")
-
-    # return render(request, 'page/userInput.html', context, {'userInput': userInput})
-
     
     
 

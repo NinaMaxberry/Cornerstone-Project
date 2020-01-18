@@ -3,32 +3,12 @@ from django.db import models
 
 # Create your models here.
 
-class zipUser(models.Model):
-    Zip = models.IntegerField()
-    District = models.IntegerField()
-    CongressDistrict = models.TextField()
-    First_Name = models.TextField()
-    Last_Name = models.TextField ()
-    Message = models.TextField()
-
-    
+class mainData(models.Model):
+    Zip = models.IntegerField(primary_key=True)
+    district = models.IntegerField()
+    CongressDistrict = models.IntegerField()
+    First_Name = models.TextField(max_length=50)
+    Last_Name = models.TextField(max_length=50)
 
     def __str__(self):
-        return f'{self.Zip} {self.District} {self.CongressDistrict} {self.First_Name} {self.Last_Name} {self.Message}'
-    
-
-class Csv(models.Model):
-    zip = models.IntegerField()
-    primary_city = models.TextField()
-    county = models.TextField()
-    area_codes = models.CharField(max_length=5)
-    message = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f'{self.zip} {self.primary_city} {self.county} {self.area_codes} {self.message}'
-
-# class KyImage(models.Model):
-#     name = models.CharField(max_length=50)
-#     outlineImg = models.ImageField(default='null')
-
-
+        return f'{self.Zip}{self.district}{self.CongressDistrict}{self.First_Name}{self.Last_Name}'

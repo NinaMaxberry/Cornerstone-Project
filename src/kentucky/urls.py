@@ -28,9 +28,7 @@ from .views import *
 urlpatterns = [
     
     path('', include('page.urls', namespace="homepage")),
-    path('csvUpload/', include('page.urls', namespace='csv_upload')),
     path('home/', include('page.urls', namespace='homepage')),
-    path('zip/', include('page.urls', namespace='zipUsercd')),
     path('results/', include('page.urls', namespace='results_view')),
     path('admin/', admin.site.urls),
     
